@@ -1,5 +1,5 @@
-(function () {
-  "use strict";
+// function test() {
+//   "use strict";
 
   const items = [
     "🍭",
@@ -15,11 +15,16 @@
     "🦖",
     "🍎"
   ];
-  document.querySelector(".info").textContent = items.join(" ");
-
-  const doors = document.querySelectorAll(".door");
+//   document.querySelector(".info").textContent = items.join(" ");
+window.onload = function () {
+  doors = document.querySelectorAll(".door");
   document.querySelector("#spinner").addEventListener("click", spin);
   document.querySelector("#reseter").addEventListener("click", init);
+//   setTimeout(()=>{
+  console.log(doors)
+//   },500)
+}
+
 
   async function spin() {
     init(false, 1, 2);
@@ -32,6 +37,8 @@
   }
 
   function init(firstInit = true, groups = 1, duration = 1) {
+    console.log('test')
+    console.log(doors)
     for (const door of doors) {
       if (firstInit) {
         door.dataset.spinned = "0";
@@ -72,13 +79,15 @@
           { once: true }
         );
       }
-      // console.log(pool);
+      console.log('test2')
+      console.log(pool);
 
       for (let i = pool.length - 1; i >= 0; i--) {
         const box = document.createElement("div");
         box.classList.add("box");
         box.style.width = door.clientWidth + "px";
         box.style.height = door.clientHeight + "px";
+        console.log(door.clientHeight)
         box.textContent = pool[i];
         boxesClone.appendChild(box);
       }
@@ -101,4 +110,4 @@
   }
 
   init();
-})();
+
