@@ -1,0 +1,7 @@
+{
+  "name": "YppMachine",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
