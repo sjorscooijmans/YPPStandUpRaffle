@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MachinePage implements OnInit {
 
-  personen = ['sjors', 'martijn', 'leonard']
+  personen = [
+    {name: 'sjors', image: ''},
+    {name: 'martijn', image: ''},
+    {name: 'leonard', image: ''}
+  ]
   constructor() { }
 
   ngOnInit() {
